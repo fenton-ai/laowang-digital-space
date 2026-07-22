@@ -4,72 +4,87 @@
 
 ---
 
-## 项目
+## 项目状态：✅ 已成功上线
+
 **老王炒饭 — AI 线下门店数字体验空间**
 
 路径：`D:\AI codex\ContentOS\ai-store-experience`
 
 ---
 
-## 最后操作
+## 线上地址
 
-正在将部署方案从 Vercel **切换为 GitHub Pages**（因为 Vercel 国内访问不稳定）。
+### 主站（GitHub Pages）
+**https://fenton-ai.github.io/laowang-digital-space/**
+- ✅ HTTP 200 正常
+- ✅ 自动部署（push 触发 Actions）
+- ✅ 国内可访问（速度取决于网络环境）
 
-### 已完成的步骤
-1. ✅ Vercel 成功部署（域名：ai-store-experience.vercel.app）—— 但国内访问需要科学上网
-2. ✅ 创建 GitHub 仓库：`fenton-ai/laowang-digital-space`
-3. ✅ 首次代码已推送
-4. ✅ 创建 GitHub Actions 部署配置（`.github/workflows/deploy.yml`）
-5. ✅ 修改 `vite.config.ts`，添加 `base: '/laowang-digital-space/'`
-
-### 中断的位置
-修改了 `vite.config.ts`（添加 base path）和新建了 `.github/workflows/deploy.yml`，**尚未提交和推送**。
+### 备用（Vercel）
+https://ai-store-experience.vercel.app
+- ⚠️ 国内访问需科学上网
 
 ---
 
-## 恢复步骤
+## 最后操作
 
-```bash
-cd "D:\AI codex\ContentOS\ai-store-experience"
+1. ✅ `git add -A && git commit && git push` — 提交 GitHub Pages 配置
+2. ✅ 启用 GitHub Pages（`gh api repos/.../pages -X POST`）
+3. ✅ 重新触发部署（`gh run rerun`）
+4. ✅ 部署成功（build + deploy 均通过）
+5. ✅ 更新 shop.config.ts qrCode 为正式URL
+6. ✅ 重新构建并推送验证
 
-# 1. 提交当前修改
-git add -A
-git commit -m "配置 GitHub Pages 自动部署"
+---
 
-# 2. 推送到 GitHub（触发自动部署）
-git push
+## 当前 Git 状态
 
-# 3. 等待 Actions 构建完成（约2分钟）
-# 查看：https://github.com/fenton-ai/laowang-digital-space/actions
+```
+$ git status
+✅ 工作目录干净
+✅ 无未提交文件
+✅ 远程 origin 已同步
 
-# 4. 部署完成后访问
-# https://fenton-ai.github.io/laowang-digital-space/
-
-# 5. 如果 GitHub Pages 也不行，尝试：
-#    方案A: Cloudflare Pages（连接 GitHub 仓库自动部署）
-#    方案B: 国内服务器 Nginx 部署
-#    方案C: 腾讯云/阿里云静态网站托管
+最近提交：
+1314aa6 更新部署URL到shop.config
+923dfd7 配置 GitHub Pages 自动部署
+036597e 老王炒饭 - AI数字体验空间
 ```
 
 ---
 
 ## 项目配置
+
 | 配置项 | 值 |
 |--------|-----|
 | 行业 | `restaurant`（暖金色烟火气主题） |
 | 店名 | 老王炒饭 |
-| 当前的图片 | Unsplash 占位图 |
-| 音频 | 占位 MP3（替换为真实音乐更佳） |
+| 当前的图片 | Unsplash 占位图（可替换为商家真实照片） |
+| 音频 | 占位 MP3（可替换为真实氛围音乐） |
 | GitHub 仓库 | https://github.com/fenton-ai/laowang-digital-space |
-| Vercel 地址 | https://ai-store-experience.vercel.app（备选） |
+| 正式URL | https://fenton-ai.github.io/laowang-digital-space/ |
+| 备用URL | https://ai-store-experience.vercel.app |
 
 ---
 
-## 当前未提交的文件
-```
- M vite.config.ts        # 已修改（添加 base path）
-?? .github/              # 新建（GitHub Actions 配置）
+## 下次恢复直接继续
+
+```bash
+cd "D:\AI codex\ContentOS\ai-store-experience"
+
+# 项目已上线，工作目录干净
+# 可直接开始新功能开发
+
+# 本地开发
+npm run dev
+
+# 修改后部署
+git add -A && git commit -m "描述修改" && git push
 ```
 
-## 最终目标
-用户希望得到一个**国内能直接访问**、**免费**、**二维码永久有效**的部署方案。
+## 推荐下一步
+
+1. **绑定自定义域名** — 去域名商买个域名，CNAME 到 `fenton-ai.github.io`，确保二维码永久有效
+2. **替换真实图片** — 把 Unsplash 图换成商家自己的门店/菜品照片
+3. **替换真实音乐** — 把占位 MP3 换成行业氛围音乐
+4. **复制新门店** — 复制项目改 shop.config.ts 即可生成第二家门店

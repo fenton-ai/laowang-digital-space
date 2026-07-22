@@ -40,34 +40,45 @@
 - [x] App.tsx — 主入口组装
 - [x] 占位MP3音频文件
 
-## Sprint 5：部署上线 🔄（当前）
+## Sprint 5：部署上线 ✅
+
+### 已完成
+- [x] Vercel 部署（备用）
+- [x] GitHub 仓库创建
+- [x] GitHub Actions 部署配置
+- [x] Vite base path 配置
+- [x] GitHub Pages 启用
+- [x] **GitHub Pages 部署成功（HTTP 200）**
+- [x] 更新 shop.config.ts qrCode 为最终URL
+
+### 待优化
+- [ ] 测试 GitHub Pages 国内访问速度
+- [ ] 如访问慢，尝试 Cloudflare Pages 或其他方案
+
+## Sprint 6：优化与扩展
 
 ### 高优先级
-- [ ] **提交并推送 vite.config.ts + .github/workflows/deploy.yml**
-- [ ] **验证 GitHub Pages 部署是否成功**
-- [ ] 如果 GitHub Pages 不能访问，尝试 Cloudflare Pages
+- [ ] **绑定自定义域名** — 确保二维码永久有效
+- [ ] 替换占位MP3为真实行业氛围音乐
+- [ ] 替换 Unsplash 占位图为商家真实照片
 
 ### 中优先级
 - [ ] 测试完整用户流程（扫码 → 打开 → 浏览所有模块）
-- [ ] 记录最终访问网址到 shop.config.ts
-- [ ] 测试二维码下载/分享功能
-- [ ] 测试音频播放功能
+- [ ] 测试音频播放功能（微信兼容性）
+- [ ] 测试二维码下载/分享/打印功能
 
 ### 低优先级
-- [ ] 替换占位MP3为真实音乐文件
-- [ ] 添加更多行业主题（奶茶/面馆/烘焙等）
+- [ ] 添加更多行业主题（奶茶/面馆/烘焙/理发等）
 - [ ] 添加老板真人语音录制说明
 - [ ] 添加多语言支持
-
-## Sprint 6：1000店复制方案
 - [ ] 创建 CLI 工具：输入店名/行业/图片 → 自动生成配置
-- [ ] 创建 Vercel/Netlify 一键部署模板
-- [ ] 添加自定义域名文档
+- [ ] 创建一键部署模板
 - [ ] 添加批量部署脚本
 
 ---
 
 ## 已知问题
-1. ~~Vercel 国内访问慢~~ → 已切换 GitHub Pages 方案
-2. 二维码永久性问题 → 建议商家绑定自定义域名
-3. GitHub Pages 国内访问稳定性待验证
+1. ✅ ~~Vercel 国内访问慢~~ → 已切换 GitHub Pages
+2. ⚠️ GitHub Pages 国内访问速度取决于网络环境
+3. ⚠️ 二维码永久性 → 建议绑定自定义域名
+4. ⚠️ 占位MP3无实际内容 → 建议替换真实音乐

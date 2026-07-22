@@ -3,7 +3,7 @@
 ## 会话时间
 2026-07-22
 
-## 项目状态：开发中
+## 项目状态：✅ 已上线
 
 ---
 
@@ -47,40 +47,41 @@
 ### 6. 音频占位文件
 - [x] 生成9个占位MP3（food/hotel/beauty/coffee/default）
 
-### 7. 部署尝试
-- [x] Vercel 部署成功 → https://ai-store-experience.vercel.app
+### 7. 部署（全部完成）
 - [x] GitHub 仓库创建 → https://github.com/fenton-ai/laowang-digital-space
 - [x] GitHub Actions 自动部署配置（.github/workflows/deploy.yml）
 - [x] Vite base path 已修改为 `/laowang-digital-space/`
+- [x] GitHub Pages 启用并配置为 Actions 构建
+- [x] **部署成功 → https://fenton-ai.github.io/laowang-digital-space/（HTTP 200）**
+- [x] shop.config.ts 的 qrCode 字段已填入最终URL
+- [x] 备用：Vercel 部署 https://ai-store-experience.vercel.app
 
 ---
 
-## 当前修改中的文件
+## 当前状态
 
-### 已修改但未提交
-- `vite.config.ts` — 添加了 `base: '/laowang-digital-space/'`（适配 GitHub Pages 子路径）
-- `.github/workflows/deploy.yml` — 新建，GitHub Pages 自动部署
-
-### 未追踪
-- `.github/` 目录（workflows 配置）
+✅ **所有代码已提交并推送**
+✅ **GitHub Pages 自动部署正常**
+✅ **网站线上可访问（HTTP 200）**
+✅ **工作目录干净，无未提交修改**
 
 ---
 
 ## 当前遇到的问题
 
-1. **Vercel 国内访问不稳定** — 已转向 GitHub Pages 方案
-2. **二维码问题** — 用户询问二维码是否永久有效，已解释：二维码本身永久，但网址决定了有效性，建议绑定自定义域名
-3. **GitHub Pages 部署尚未完成** — 刚配置完 Actions，需要 push 触发首次部署验证
+1. ~~Vercel 国内访问不稳定~~ → ✅ 已切换 GitHub Pages，部署成功
+2. GitHub Pages 国内访问速度取决于网络环境，部分区域可能需要优化
+3. 二维码永久性问题 → 告知用户：二维码图片永久有效，但建议绑定自定义域名确保网址长期有效
 
 ---
 
-## 下一步要执行的
+## 下一步可做
 
-1. **提交并推送当前修改**（vite.config.ts + .github/workflows/deploy.yml）
-2. **验证 GitHub Pages 部署是否成功**
-3. 如果 GitHub Pages 不能直接访问，尝试 Cloudflare Pages 或其他国内可访问的免费方案
-4. 上线后测试完整功能：开屏动画 → Hero → 品牌故事 → 产品展示 → 环境空间 → 评价 → 地图 → 二维码
-5. 记录最终可访问的网址到 shop.config.ts 的 qrCode 字段
+1. **绑定自定义域名**（推荐）— 买个域名 CNAME 到 `fenton-ai.github.io`，二维码永久有效
+2. **替换真实音乐** — 把占位 MP3 换成真实的行业氛围音乐
+3. **替换真实图片** — 把 Unsplash 占位图换成商家自己的门店照片
+4. **添加更多行业** — 奶茶、面馆、烘焙等新行业主题
+5. **适配更多门店** — 创建 CLI 工具或脚本快速生成新门店配置
 
 ---
 
@@ -94,3 +95,6 @@ npm run build     # 构建
 npm run preview   # 预览构建
 git push          # 推送触发部署
 ```
+
+## 线上地址
+https://fenton-ai.github.io/laowang-digital-space/
