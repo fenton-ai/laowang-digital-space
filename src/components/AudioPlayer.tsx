@@ -25,6 +25,20 @@ export default function AudioPlayer({ industry }: Props) {
           transition={{ duration: 0.5, ease: [0.19, 1, 0.22, 1] }}
           className="relative"
         >
+          {/* Pulsing ring when not playing */}
+          {!isPlaying && isLoaded && (
+            <motion.div
+              className="absolute -inset-1 rounded-2xl"
+              animate={{
+                boxShadow: [
+                  '0 0 0 0 rgba(255,255,255,0.1)',
+                  '0 0 0 8px rgba(255,255,255,0)',
+                ],
+              }}
+              transition={{ duration: 2, repeat: Infinity, ease: 'easeOut' }}
+            />
+          )}
+
           {/* Main button with glass effect */}
           <div className="glass-strong rounded-2xl overflow-hidden shadow-2xl">
             <button
