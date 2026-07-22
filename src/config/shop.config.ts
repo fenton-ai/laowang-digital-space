@@ -216,7 +216,7 @@ const shopConfig: ShopConfig = {
   // ========== 媒体 ==========
   heroImage: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=1920&q=85',
   heroVideo: '',
-  qrCode: '',
+  qrCode: 'https://fenton-ai.github.io/laowang-digital-space/',
 };
 
 export default shopConfig;
